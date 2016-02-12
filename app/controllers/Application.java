@@ -37,7 +37,7 @@ public class Application extends Controller {
 
         eventService.saveUserEvent(userEvent);
 
-        return ok("TEST");
+        return ok("OK");
 
     }
 

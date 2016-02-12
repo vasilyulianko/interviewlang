@@ -14,7 +14,7 @@ object AuditFixture {
     event.setAction("SEND SMS")
     event.setAffectedUser(2l)
     event.setComponent("SMS")
-    event.setEventTime(new java.util.Date())
+    event.setEventTime(123656749L)
     event.setFunction("SEND")
     event.setFeature("Parent SMS")
     event.setPayload("{}")
