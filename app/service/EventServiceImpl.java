@@ -16,7 +16,7 @@ public class EventServiceImpl implements EventService {
     @Inject
     UserEventDAO userEventDAO;
 
-    public void saveUserEvent(UserEvent event) {
+    public void save(UserEvent event) {
         Logger.info("EventServiceImpl");
 
         try {

@@ -9,5 +9,5 @@ import model.UserEvent;
 @ImplementedBy(EventServiceImpl.class)
 public interface EventService {
 
-    public void saveUserEvent(UserEvent userEvent);
+    public void save(UserEvent userEvent);
 }

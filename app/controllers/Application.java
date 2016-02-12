@@ -8,7 +8,6 @@ import play.libs.Json;
 import play.mvc.*;
 
 import service.EventService;
-import service.EventServiceImpl;
 
 import javax.inject.Inject;
 import java.io.IOException;
@@ -33,9 +32,13 @@ public class Application extends Controller {
                 .enable(DeserializationFeature.USE_BIG_DECIMAL_FOR_FLOATS)
                 .disable(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES);
 
+
         UserEvent userEvent = mapper.readValue(jsonString, UserEvent.class);
 
-        eventService.saveUserEvent(userEvent);
+
+
+
+        eventService.save(userEvent);
 
         return ok("OK");
 

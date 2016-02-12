@@ -1,6 +1,8 @@
 package com.vsware.acceptance.audit.fixture
 
 import java.math.BigDecimal
+import java.text.SimpleDateFormat
+import java.util.Date
 
 import model.UserEvent
 
@@ -14,9 +16,14 @@ object AuditFixture {
     event.setAction("SEND SMS")
     event.setAffectedUser(2l)
     event.setComponent("SMS")
-    event.setEventTime(123656749L)
+
+    val format: SimpleDateFormat = new SimpleDateFormat("yyyy-MM-dd,HH:mm:ss.SSS")
+    val date: Date = format.parse("2016-02-12,12:33:44.555")
+
+    event.setEventTime(date)
     event.setFunction("SEND")
     event.setFeature("Parent SMS")
+    event.setSubfeature("Subfeature")
     event.setPayload("{}")
     event.setQuantity(BigDecimal.ONE)
     event.setSchool("11")
