@@ -1,6 +1,8 @@
 package model;
 
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
@@ -104,6 +106,8 @@ public class UserEvent implements Serializable {
     private String component;
     private String feature;
 
+
+   // @JsonFormat(shape= JsonFormat.Shape.STRING, pattern="yyyy-MM-dd,HH:mm:ss.SSS", timezone="CET")
     private Date eventTime;
     private String action;
     private BigDecimal quantity;
