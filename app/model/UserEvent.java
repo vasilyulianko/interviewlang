@@ -1,13 +1,14 @@
 package model;
 
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 
 /**
  * Created by VS-Support on 29/01/2016.
  */
-public class UserEvent {
+public class UserEvent implements Serializable {
 
 
     public Long getUser() {

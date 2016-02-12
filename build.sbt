@@ -10,7 +10,9 @@ libraryDependencies ++= Seq(
   javaJdbc,
   cache,
   javaWs,
-  "mysql" % "mysql-connector-java" % "5.1.18"
+  "mysql" % "mysql-connector-java" % "5.1.18",
+  "org.scalatest" % "scalatest_2.11" % "2.2.6" % "test",
+  "org.scalatestplus" % "play_2.11" % "1.4.0" % "test"
 )
 
 // Play provides two styles of routers, one expects its actions to be injected, the
