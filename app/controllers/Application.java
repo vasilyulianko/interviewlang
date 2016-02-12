@@ -1,12 +1,17 @@
 package controllers;
 
+import com.fasterxml.jackson.databind.DeserializationFeature;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import model.UserEvent;
+import play.libs.Json;
 import play.mvc.*;
 
 import service.EventService;
 import service.EventServiceImpl;
 
 import javax.inject.Inject;
+import java.io.IOException;
 
 public class Application extends Controller {
 
@@ -18,11 +23,18 @@ public class Application extends Controller {
         return ok("Your new application is ready.");
     }
 
-    //@BodyParser.Of(BodyParser.Json.class)
-    public Result sendUserEvent() {
+    public Result sendUserEvent() throws IOException {
 
-        UserEvent userEvent = new UserEvent();
-        userEvent.setSchool("school");
+        JsonNode jsonNode = request().body().asJson();
+        String jsonString = Json.stringify(jsonNode);
+
+        ObjectMapper mapper = new ObjectMapper()
+                // enable features and customize the object mapper here ...
+                .enable(DeserializationFeature.USE_BIG_DECIMAL_FOR_FLOATS)
+                .disable(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES);
+
+        UserEvent userEvent = mapper.readValue(jsonString, UserEvent.class);
+
         eventService.saveUserEvent(userEvent);
 
         return ok("TEST");
