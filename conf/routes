@@ -12,4 +12,6 @@ GET     /assets/*file               controllers.Assets.versioned(path="/public",
 POST     /user           controllers.Application.sendUserEvent()
 
 
-GET     /getUser                    controllers.Application.getUser()
+#GET     /getUser                    controllers.Application.getUser()
+
+POST    /sendUserEvent              controllers.Application.sendUserEvent()

@@ -105,7 +105,7 @@ public class UserEvent {
 
     private Date eventTime;
     private String action;
-    private BigDecimal  quantity;
+    private BigDecimal quantity;
     private String school;
     private String payload;
     private String function;
@@ -119,7 +119,7 @@ public class UserEvent {
         this.subfeature = subfeature;
     }
 
-    private String  subfeature;
+    private String subfeature;
 
     public String getUserRole() {
         return userRole;
@@ -129,6 +129,6 @@ public class UserEvent {
         this.userRole = userRole;
     }
 
-    private String  userRole;
+    private String userRole;
 
 }
