@@ -1,8 +1,6 @@
 package model;
 
 
-import com.fasterxml.jackson.annotation.JsonFormat;
-
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
@@ -12,6 +10,33 @@ import java.util.Date;
  */
 public class UserEvent implements Serializable {
 
+    private Date eventTime;
+    private String school;
+    private Long user;
+    private String userRole;
+    private Long affectedUser;
+    private String component;
+    private String feature;
+    private String subfeature;
+    private String action;
+    private BigDecimal quantity;
+    private String payload;
+
+    public Date getEventTime() {
+        return eventTime;
+    }
+
+    public void setEventTime(Date eventTime) {
+        this.eventTime = eventTime;
+    }
+
+    public String getSchool() {
+        return school;
+    }
+
+    public void setSchool(String school) {
+        this.school = school;
+    }
 
     public Long getUser() {
         return user;
@@ -19,6 +44,14 @@ public class UserEvent implements Serializable {
 
     public void setUser(Long user) {
         this.user = user;
+    }
+
+    public String getUserRole() {
+        return userRole;
+    }
+
+    public void setUserRole(String userRole) {
+        this.userRole = userRole;
     }
 
     public Long getAffectedUser() {
@@ -45,12 +78,12 @@ public class UserEvent implements Serializable {
         this.feature = feature;
     }
 
-    public Date getEventTime() {
-        return eventTime;
+    public String getSubfeature() {
+        return subfeature;
     }
 
-    public void setEventTime(Date eventTime) {
-        this.eventTime = eventTime;
+    public void setSubfeature(String subfeature) {
+        this.subfeature = subfeature;
     }
 
     public String getAction() {
@@ -69,14 +102,6 @@ public class UserEvent implements Serializable {
         this.quantity = quantity;
     }
 
-    public String getSchool() {
-        return school;
-    }
-
-    public void setSchool(String school) {
-        this.school = school;
-    }
-
     public String getPayload() {
         return payload;
     }
@@ -84,56 +109,4 @@ public class UserEvent implements Serializable {
     public void setPayload(String payload) {
         this.payload = payload;
     }
-
-    public String getFunction() {
-        return function;
-    }
-
-    public void setFunction(String function) {
-        this.function = function;
-    }
-
-    public String getSchoolSubject() {
-        return schoolSubject;
-    }
-
-    public void setSchoolSubject(String schoolSubject) {
-        this.schoolSubject = schoolSubject;
-    }
-
-    private Long user;
-    private Long affectedUser;
-    private String component;
-    private String feature;
-
-
-   // @JsonFormat(shape= JsonFormat.Shape.STRING, pattern="yyyy-MM-dd,HH:mm:ss.SSS", timezone="CET")
-    private Date eventTime;
-    private String action;
-    private BigDecimal quantity;
-    private String school;
-    private String payload;
-    private String function;
-    private String schoolSubject;
-
-    public String getSubfeature() {
-        return subfeature;
-    }
-
-    public void setSubfeature(String subfeature) {
-        this.subfeature = subfeature;
-    }
-
-    private String subfeature;
-
-    public String getUserRole() {
-        return userRole;
-    }
-
-    public void setUserRole(String userRole) {
-        this.userRole = userRole;
-    }
-
-    private String userRole;
-
 }
