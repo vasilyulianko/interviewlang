@@ -13,18 +13,17 @@ object AuditFixture {
 
   def createEventDTO() : UserEvent  = {
     val event = new UserEvent()
-    event.setAction("SEND SMS")
-    event.setAffectedUser(2l)
-    event.setComponent("SMS")
     event.setEventTime(new Date())
-    event.setFunction("SEND")
-    event.setFeature("Parent SMS")
-    event.setSubfeature("Subfeature")
-    event.setPayload("{}")
-    event.setQuantity(BigDecimal.ONE)
     event.setSchool("11")
     event.setUser(21l)
     event.setUserRole("PRINCIPAL")
+    event.setAffectedUser(2l)
+    event.setComponent("SMS")
+    event.setFeature("Parent SMS")
+    event.setSubfeature("Subfeature")
+    event.setAction("SEND SMS")
+    event.setQuantity(BigDecimal.ONE)
+    event.setPayload("{}")
     return event;
   }
 
