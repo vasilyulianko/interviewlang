@@ -22,7 +22,7 @@ public class Application extends Controller {
         return ok("Your new application is ready.");
     }
 
-    public Result sendUserEvent() throws IOException {
+    public Result sendUserEvent() {
         JsonNode jsonNode = request().body().asJson();
         UserEvent userEvent = Json.fromJson(jsonNode, UserEvent.class);
         eventService.save(userEvent);
