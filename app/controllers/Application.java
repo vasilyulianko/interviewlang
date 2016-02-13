@@ -23,21 +23,8 @@ public class Application extends Controller {
     }
 
     public Result sendUserEvent() throws IOException {
-
         JsonNode jsonNode = request().body().asJson();
-        String jsonString = Json.stringify(jsonNode);
-
-        ObjectMapper mapper = new ObjectMapper()
-                // enable features and customize the object mapper here ...
-                .enable(DeserializationFeature.USE_BIG_DECIMAL_FOR_FLOATS)
-                .disable(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES);
-
-
-        UserEvent userEvent = mapper.readValue(jsonString, UserEvent.class);
-
-
-
-
+        UserEvent userEvent = Json.fromJson(jsonNode, UserEvent.class);
         eventService.save(userEvent);
 
         return ok("OK");

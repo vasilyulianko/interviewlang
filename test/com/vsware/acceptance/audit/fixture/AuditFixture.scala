@@ -16,11 +16,7 @@ object AuditFixture {
     event.setAction("SEND SMS")
     event.setAffectedUser(2l)
     event.setComponent("SMS")
-
-    val format: SimpleDateFormat = new SimpleDateFormat("yyyy-MM-dd,HH:mm:ss.SSS")
-    val date: Date = format.parse("2016-02-12,12:33:44.555")
-
-    event.setEventTime(date)
+    event.setEventTime(new Date())
     event.setFunction("SEND")
     event.setFeature("Parent SMS")
     event.setSubfeature("Subfeature")
